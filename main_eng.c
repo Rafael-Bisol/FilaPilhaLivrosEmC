@@ -28,7 +28,7 @@ void AddBook(GrupoLivros *group, char *livro)
 {
     if (isGroupFull(group))
     {
-        printf("The group is full! One more book and there will be no more space on Eath!\n");
+        printf("The group is full! One more book and there will be no more space on Earth!\n");
         return;
     }
     group->top++;
@@ -76,7 +76,7 @@ char *Unstack(GrupoLivros *stack)
 
 int main(int argc, char *argv[])
 {
-    char sep[] = "\\-------------------------\\\n";
+    char sep[] = "\\\\-------------------------\\\\\n";
     GrupoLivros stack;
     InicializeGroup(&stack);
     GrupoLivros queue;

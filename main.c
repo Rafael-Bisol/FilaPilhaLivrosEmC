@@ -76,7 +76,7 @@ char *Desempilhar(GrupoLivros *pilha)
 
 int main(int argc, char *argv[])
 {
-    char sep[] = "\\-------------------------\\\n";
+    char sep[] = "\\\\-------------------------\\\\\n";
     GrupoLivros pilha;
     InicializarGrupo(&pilha);
     GrupoLivros fila;
