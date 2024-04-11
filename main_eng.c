@@ -7,24 +7,24 @@
 typedef struct {
     char items[MAX_ITEMS][50];
     int top;
-} GrupoLivros;
+} BookGroup;
 
-void InicializeGroup(GrupoLivros *group)
+void InicializeGroup(BookGroup *group)
 {
     group->top = -1;
 }
 
-int isGroupFull(GrupoLivros *group)
+int isGroupFull(BookGroup *group)
 {
     return (group->top == MAX_ITEMS - 1);
 }
 
-int isGroupEmpty(GrupoLivros *group)
+int isGroupEmpty(BookGroup *group)
 {
     return (group->top == -1);
 }
 
-void AddBook(GrupoLivros *group, char *livro)
+void AddBook(BookGroup *group, char *livro)
 {
     if (isGroupFull(group))
     {
@@ -35,7 +35,7 @@ void AddBook(GrupoLivros *group, char *livro)
     strcpy(group->items[group->top],livro);
 }
 
-void PrintBooks(GrupoLivros *group)
+void PrintBooks(BookGroup *group)
 {
     if (isGroupEmpty(group))
     {
@@ -48,7 +48,7 @@ void PrintBooks(GrupoLivros *group)
     }
 }
 
-char *Dequeue(GrupoLivros *queue)
+char *Dequeue(BookGroup *queue)
 {
     if (isGroupEmpty(queue))
     {
@@ -63,7 +63,7 @@ char *Dequeue(GrupoLivros *queue)
     return queue->items[queue->top+1];
 }
 
-char *Unstack(GrupoLivros *stack)
+char *Unstack(BookGroup *stack)
 {
     if (isGroupEmpty(stack))
     {
@@ -77,9 +77,9 @@ char *Unstack(GrupoLivros *stack)
 int main(int argc, char *argv[])
 {
     char sep[] = "\\\\-------------------------\\\\\n";
-    GrupoLivros stack;
+    BookGroup stack;
     InicializeGroup(&stack);
-    GrupoLivros queue;
+    BookGroup queue;
     InicializeGroup(&queue);
 
     AddBook(&queue, "The Gunslinger");
